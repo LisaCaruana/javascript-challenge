@@ -10,24 +10,27 @@ function build_table(tableData) {
       var cell = row.append("td");
       cell.text(value);
     });
-  });
+  })
 };
 
 var button = d3.select("#btn btn-default");
 var form = d3.select("#form");
 
 button.on("click", runEnter);
-form.on("submit", runEnter);
+form.on("submit",runEnter);
 
 function runEnter() {
   var filtered_data = data;
   d3.event.preventDefault();
 
-  var form_input = d3.select("#datetime").property("value");
+  var form_input = 
 
-  if (form_input) {
-    filtered_data=filtered_data.filter(item => item.datetime==form_input)
-  };
+    var form_input1 = d3.select("#datetime").property("value")
+    var form_input2 = d3.select("#city").property("value");
+
+  if () {
+  filtered_data=filtered_data.filter(item => {(item.datetime===form_input) & (item.city===form_input)})
+  }
   
   build_table(filtered_data);
 };
